@@ -1,0 +1,26 @@
+@layer base {
+	html {
+		@apply scroll-smooth antialiased;
+	}
+	body {
+		@apply flex min-h-screen flex-col dark:bg-zinc-900 dark:text-zinc-50;
+	}
+	main {
+		@apply -mt-16 flex min-h-screen flex-grow flex-col pt-16;
+	}
+	/* disallow copying/dragging images */
+	img,
+	svg,
+	picture {
+		@apply pointer-events-none select-none;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		@apply scroll-m-16;
+	}
+}

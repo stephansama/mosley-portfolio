@@ -1,0 +1,18 @@
+---
+import { loadSVG, type IncludedIconPack } from "@lib/icons";
+
+const {
+	pack,
+	name,
+	width = 24,
+	height = width,
+} = Astro.props as {
+	pack: IncludedIconPack;
+	name: string;
+	width: number;
+	height: number;
+};
+const loadedHTML = await loadSVG(pack, name, { width, height });
+---
+
+<Fragment set:html={loadedHTML} />

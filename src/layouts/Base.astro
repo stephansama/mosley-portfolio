@@ -1,0 +1,36 @@
+---
+import { ViewTransitions } from "astro:transitions";
+import {
+	SEO,
+	Navbar,
+	Footer,
+	BackToTop,
+	DarkmodeScript,
+	type SEOProps,
+} from "@common/index";
+import "@styles/global.pcss";
+
+const seoProps = Astro.props as SEOProps;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<DarkmodeScript />
+		<SEO {...seoProps} />
+		<script src="@lib/core"></script>
+		<ViewTransitions />
+	</head>
+	<body
+		class:list={[
+			{ "debug-screens": import.meta.env.NODE_ENV === "development" },
+		]}
+	>
+		<Navbar />
+		<main>
+			<slot />
+		</main>
+		<Footer />
+		<BackToTop />
+	</body>
+</html>

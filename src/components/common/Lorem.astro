@@ -1,0 +1,13 @@
+---
+const { times = 1 } = Astro.props as { times?: number };
+---
+
+{
+	Array.from({ length: times }, (_, i) => i).map((i) => (
+		<span>
+			Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto doloribus
+			rem placeat nam ea aut eos beatae optio! Explicabo velit ut repudiandae
+			assumenda molestias placeat, rerum voluptate vitae veritatis in.
+		</span>
+	))
+}

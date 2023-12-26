@@ -1,0 +1,13 @@
+<button
+	class="fixed bottom-0 end-0 m-16 flex aspect-square h-8 w-8 scale-0 items-center justify-center rounded-full bg-orange-500 p-2 text-white transition duration-300"
+	aria-label="Send back to top button"
+	type="button"
+	x-cloak
+	x-data="{isWithinScrollRange: false}"
+	x-bind:class="{'scale-100': isWithinScrollRange}"
+	x-on:click="document.documentElement.scrollTop = 0"
+	x-bind:aria-hidden="isWithinScrollRange"
+	x-on:scroll.window="isWithinScrollRange = (window.pageYOffset > window.innerHeight * 1.5)"
+>
+	<i class="icon-[heroicons--chevron-up]"></i>
+</button>

@@ -1,0 +1,26 @@
+{
+	"extends": "astro/tsconfigs/strict",
+	"exclude": ["node_modules/*"],
+	"include": ["serverless/**/*", "src/**/*", "sanity.*.ts", "astro.config.*"],
+	"compilerOptions": {
+		"baseUrl": ".",
+		"plugins": [{ "name": "@astrojs/ts-plugin" }],
+		"paths": {
+			"@serverless/*": ["serverless/*"],
+			"@components/*": ["src/components/*"],
+			"@layouts/*": ["src/layouts/*"],
+			"@schemas/*": ["src/schemas/*"],
+			"@common/*": ["src/components/common/*"],
+			"@github/*": ["src/components/github/*"],
+			"@pocket/*": ["src/components/pocket/*"],
+			"@svelte/*": ["src/components/svelte/*"],
+			"@styles/*": ["src/styles/*"],
+			"@pages/*": ["src/pages/*"],
+			"@lib/*": ["src/lib/*"],
+			"@pkg": ["package.json"]
+		},
+		"jsx": "react-jsx",
+		"jsxImportSource": "react",
+		"strictNullChecks": true
+	}
+}

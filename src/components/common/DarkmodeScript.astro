@@ -1,0 +1,19 @@
+<script is:inline>
+	(() => {
+		const setDarkMode = () => {
+			const key = "darkmode";
+			const isSystemDarkMode = window.matchMedia(
+				"(prefers-color-scheme: dark)"
+			).matches;
+			const isDarkMode =
+				window.localStorage[key] === "true" ||
+				(!(key in window.localStorage) && isSystemDarkMode);
+
+			if (isDarkMode) document.documentElement.classList.add("dark");
+		};
+
+		setDarkMode();
+
+		document.addEventListener("astro:after-swap", setDarkMode);
+	})();
+</script>

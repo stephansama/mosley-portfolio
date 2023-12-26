@@ -1,0 +1,72 @@
+---
+import { displayName, author as PKGAuthor, description as PKGDescription } from "@pkg";
+
+export type SEOProps = {
+	description?: string;
+	noFollow?: boolean;
+	noIndex?: boolean;
+	image?: string;
+	title?: string;
+};
+
+const {
+	description = PKGDescription,
+	image = "/icon/apple-touch-icon.png",
+	title,
+	noFollow,
+	noIndex,
+} = Astro.props as SEOProps;
+
+const { href } = Astro.url;
+const { generator } = Astro;
+const { name: author } = PKGAuthor;
+const Title = title ? `${title} | ${displayName}` : displayName;
+const themeColor = "#FFF";
+---
+
+<link rel="canonical" {href} />
+<title>{Title}</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+{
+	// Default Meta Tags
+	Object.entries({
+		image,
+		author,
+		generator,
+		description,
+		"theme-color": themeColor,
+	}).map(([name, content]) => <meta {name} {content} />)
+}
+{
+	// Open Graph (https://ogp.me)
+	Object.entries({
+		"og:url": href,
+		"og:type": "website",
+		"og:title": Title,
+		"og:image": image,
+		"og:description": description,
+	}).map(([property, content]) => <meta {property} {content} />)
+}
+{/* @todo add linked in post support (https://www.linkedin.com/post-inspector/) */}
+{/* ROBOTS.TXT */}
+<meta
+	name="robots"
+	content={Object.entries({ noIndex, noFollow })
+		.reduce(
+			(prev, [name, val]) => [...prev, val ? name : name.slice(2).toLowerCase()],
+			[] as string[]
+		)
+		.join(", ")}
+/>
+{/* RSS.XML */}
+<!-- <link rel="alternate" href="/rss.xml" type="application/rss+xml" title="RSS Feed" /> -->
+{/* SITEMAP.XML */}
+<!-- <link rel="sitemap" href="/sitemap.xml" type="application/xml" title="sitemap" /> -->
+{/* FAVICON */}
+<link rel="icon" href="/icon/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/icon/favicon-16x16.png" type="image/png" sizes="16x16" />
+<link rel="icon" href="/icon/favicon-32x32.png" type="image/png" sizes="32x32" />
+<link rel="icon" href="/icon/android-chrome-192x192.png" type="image/png" sizes="192x192" />
+<link rel="icon" href="/icon/android-chrome-512x512.png" type="image/png" sizes="512x512" />
+<link rel="apple-touch-icon" href="/icon/apple-touch-icon.png" type="image/png" sizes="180x180" />
