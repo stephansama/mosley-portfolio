@@ -1,0 +1,29 @@
+---
+import Base from "@layouts/Base.astro";
+import { Image } from "astro:assets";
+import sneaky from "@assets/about/sneaky.jpg";
+import serious from "@assets/about/serious.jpg";
+import twisting from "@assets/about/twisting.jpg";
+import glasseslaugh from "@assets/about/glasseslaugh.jpg";
+
+const images = [sneaky, serious, twisting, glasseslaugh];
+---
+
+<Base>
+	<div class="sticky top-16 flex flex-col backdrop-blur-sm">
+		<span class="text-4xl text-center">About</span>
+		<span>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate beatae
+			laudantium possimus. Necessitatibus molestias earum possimus incidunt
+			voluptate, sequi consectetur soluta et, ullam quos laboriosam numquam
+			fugiat, corporis veritatis quaerat. Est enim perferendis assumenda nisi,
+			dolorem dolores? Eveniet iure fugit voluptates magnam est. Voluptate
+			necessitatibus molestiae totam ratione officiis? Voluptate impedit,
+			reprehenderit facere temporibus adipisci illum voluptatibus illo corporis
+			earum. Provident hic, dolorum neque, quibusdam illo dignissimos corrupti
+			explicabo laudantium corporis libero sed nesciunt consequatur impedit odio
+			similique ex ut, mollitia nostrum facere cum nam non id ad maiores. Odio.
+		</span>
+	</div>
+	{images.map((src, i) => <Image {src} alt={`image ${i}`} />)}
+</Base>

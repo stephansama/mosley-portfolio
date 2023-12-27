@@ -1,0 +1,26 @@
+---
+import Base from "@layouts/Base.astro";
+---
+
+<Base>
+	<div class="flex-grow items-center justify-center flex-col flex gap-3">
+		<span>Get in touch 👇</span>
+		<form class="flex flex-col gap-3">
+			<input type="text" name="name" placeholder="Name" id="name" />
+			<input type="text" name="email" placeholder="Email" id="email" />
+			<textarea name="message" placeholder="Message" id="message"></textarea>
+			<button type="submit" class="uppercase font-extrabold">Submit</button>
+		</form>
+	</div>
+</Base>
+
+<style>
+	input,
+	textarea {
+		@apply rounded-md border p-2;
+	}
+</style>
+
+<script>
+	// @todo implement form validation and send mailto email when submitted
+</script>

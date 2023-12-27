@@ -1,7 +1,7 @@
 {
 	"extends": "astro/tsconfigs/strict",
 	"exclude": ["node_modules/*"],
-	"include": ["serverless/**/*", "src/**/*", "sanity.*.ts", "astro.config.*"],
+	"include": ["serverless/**/*", "src/**/*", "astro.config.*"],
 	"compilerOptions": {
 		"baseUrl": ".",
 		"plugins": [{ "name": "@astrojs/ts-plugin" }],
@@ -14,6 +14,7 @@
 			"@github/*": ["src/components/github/*"],
 			"@pocket/*": ["src/components/pocket/*"],
 			"@svelte/*": ["src/components/svelte/*"],
+			"@assets/*": ["src/assets/*"],
 			"@styles/*": ["src/styles/*"],
 			"@pages/*": ["src/pages/*"],
 			"@lib/*": ["src/lib/*"],

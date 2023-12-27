@@ -1,11 +1,16 @@
 import type { Config } from "tailwindcss";
+import scrollbar from "tailwind-scrollbar";
 import { addDynamicIconSelectors } from "@iconify/tailwind";
 
 export default {
 	darkMode: "class",
 	content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
 	theme: {
-		extend: {},
+		extend: {
+			fontFamily: {
+				sans: ["Poiret One"],
+			},
+		},
 		debugScreens: {
 			position: ["bottom", "right"],
 			style: {
@@ -25,5 +30,6 @@ export default {
 		// require("@tailwindcss/typography"),
 		// https://github.com/jorenvanhee/tailwindcss-debug-screens
 		require("tailwindcss-debug-screens"),
+		scrollbar({ nocompatible: true }),
 	],
 } satisfies Config;

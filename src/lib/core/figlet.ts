@@ -1,9 +1,9 @@
-import fontFile from "figlet/importable-fonts/Doom";
+import fontFile from "figlet/importable-fonts/Isometric4";
 import figlet, { parseFont } from "figlet";
 
 export const displayFiglet = (txt: string) => {
-	parseFont("Doom", fontFile);
-	figlet(txt, "Doom", (e, result) => {
+	parseFont("Isometric4", fontFile);
+	figlet(txt, "Isometric4", (e, result) => {
 		console.log(e ? e : result);
 	});
 };

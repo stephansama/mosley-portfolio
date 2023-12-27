@@ -1,5 +1,5 @@
 {
-	"displayName": "Portfolio",
+	"displayName": "KVNCPT",
 	"name": "portfolio",
 	"type": "module",
 	"version": "0.0.1",
@@ -16,7 +16,7 @@
 		"url": "https://stephanrandle.dev"
 	},
 	"scripts": {
-		"dev": "astro dev --host --verbose",
+		"dev": "astro dev --host",
 		"start": "astro dev",
 		"build": "astro check && astro build",
 		"preview": "netlify dev",
@@ -113,12 +113,15 @@
 		"@astrojs/check": "^0.3.4",
 		"@astrojs/netlify": "^4.0.1",
 		"@astrojs/tailwind": "^5.0.4",
+		"@fontsource/poiret-one": "^5.0.18",
 		"@iconify-json/heroicons": "^1.1.19",
+		"@iconify-json/simple-icons": "^1.1.86",
 		"@netlify/functions": "^2.4.1",
 		"alpinejs": "^3.13.3",
 		"astro": "^4.0.7",
 		"astro-robots-txt": "^1.0.0",
 		"figlet": "^1.7.0",
+		"tailwind-scrollbar": "^3.0.5",
 		"tailwindcss": "^3.4.0",
 		"typescript": "^5.3.3",
 		"xml": "^1.0.1"

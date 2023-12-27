@@ -1,7 +1,76 @@
 ---
 import Base from "@layouts/Base.astro";
+import { Image } from "astro:assets";
+import djImage from "@assets/party.png";
+
+import socials from "@assets/socials.json";
+const socialIconMap = {
+	Instagram: "icon-[simple-icons--instagram]",
+	Facebook: "icon-[simple-icons--facebook]",
+	Soundcloud: "icon-[simple-icons--soundcloud]",
+	YouTube: "icon-[simple-icons--youtube]",
+};
 ---
 
 <Base>
-	<h1>Astro</h1>
+	<div class="flex flex-col-reverse -mt-16 sm:flex-row w-full">
+		<Image
+			src={djImage}
+			alt="profile image"
+			width="500"
+			height="500"
+			class="w-full sm:w-1/2 hero"
+		/>
+		<div
+			class="align-middle sm:w-1/2 w-full flex flex-col items-center justify-center mt-36 mb-12 sm:mb-0 sm:mt-16"
+		>
+			<span class="text-7xl font-bold uppercase">D-TOWN DJ</span>
+			<span class="text-1xl font-bold">This is the description text</span>
+			<div class="flex gap-3 mt-2">
+				{
+					Object.entries(socials).map(([name, href]) => {
+						return (
+							<a {href} target="_blank" rel="noreferrer">
+								<i
+									class:list={[
+										socialIconMap[name as keyof typeof socialIconMap],
+										"text-2xl",
+									]}
+								/>
+							</a>
+						);
+					})
+				}
+			</div>
+		</div>
+	</div>
+	<div class="diagonal -mt-6 sm:mt-0">
+		<div class="mx-auto flex justify-center items-center py-16">
+			<span class="text-4xl text-white">
+				Innovative DJ originating the sound</span
+			>
+		</div>
+	</div>
 </Base>
+
+<style>
+	.hero {
+		clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+	}
+	.diagonal {
+		--skew-angle: 5deg;
+		--background: linear-gradient(45deg, #12c2e9, #c471ed, #f64f59);
+
+		position: relative;
+		isolation: isolate;
+	}
+
+	.diagonal::after {
+		content: "";
+		background: var(--background);
+		position: absolute;
+		z-index: -1;
+		inset: 0;
+		transform: skewY(var(--skew-angle));
+	}
+</style>

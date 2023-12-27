@@ -1,1 +1,48 @@
-Navbar
+---
+import { Image } from "astro:assets";
+import kvncptLogo from "@assets/KVNCPT.png";
+
+const navLinks = [
+	["About", "/about", "icon-[heroicons--identification]"],
+	["Contact", "/contact", "icon-[heroicons--phone]"],
+	["Music", "/music", "icon-[heroicons--musical-note]"],
+];
+---
+
+<nav
+	class="sticky top-0 z-30 flex h-16 w-full flex-row-reverse justify-center md:justify-end md:flex-row bg-transparent transition-c olors duration-300 after:absolute after:inset-0 after:-z-20 after:-translate-y-full after:bg-gradient -to-b after:from-white after:to-white/40 after:backdrop-blur after:transition-transform after:duratio n-300 dark:text-zinc-50 after:dark:from-zinc-900 after:dark:to-zinc-900/60"
+	x-data={`{
+		atTop: window.pageYOffset < 5,
+		mobileMenuOpen: false,
+	}`}
+	x-bind:class={`{ 'after:translate-y-0': !atTop }`}
+	x-on:scroll.window="atTop = window.pageYOffset < 5"
+>
+	<ul class="md:flex mt-2 uppercase gap-4 text-2xl mr-4 hidden">
+		{
+			navLinks.map(([name, href, iconClass]) => (
+				<li>
+					<a href={href}>
+						<i class={iconClass} />
+						<span>{name}</span>
+					</a>
+				</li>
+			))
+		}
+	</ul>
+	<a href="/">
+		<Image
+			src={kvncptLogo}
+			alt="KVNCPT"
+			width="500"
+			height="100"
+			class="w-24"
+		/>
+	</a>
+</nav>
+
+<style>
+	a {
+		@apply flex items-center gap-2;
+	}
+</style>

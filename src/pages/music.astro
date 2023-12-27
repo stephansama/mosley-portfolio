@@ -1,0 +1,25 @@
+---
+import Base from "@layouts/Base.astro";
+import { Image } from "astro:assets";
+import artwork from "@assets/artwork.jpg";
+---
+
+<Base>
+	<div class="p-4">
+		<span class="text-4xl uppercase">Released Music</span>
+		<div class="group relative text-white m-6 w-fit h-fit">
+			<Image
+				src={artwork}
+				alt="artwork"
+				width="150"
+				height="150"
+				class="group-hover:scale-125 transition z-0"
+			/>
+			<p
+				class="absolute group-hover:flex transition hidden backdrop-blur-sm w-full bottom-0 z-40"
+			>
+				This is a test
+			</p>
+		</div>
+	</div>
+</Base>

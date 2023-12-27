@@ -17,9 +17,15 @@ dependencies:
   '@astrojs/tailwind':
     specifier: ^5.0.4
     version: 5.0.4(astro@4.0.7)(tailwindcss@3.4.0)
+  '@fontsource/poiret-one':
+    specifier: ^5.0.18
+    version: 5.0.18
   '@iconify-json/heroicons':
     specifier: ^1.1.19
     version: 1.1.19
+  '@iconify-json/simple-icons':
+    specifier: ^1.1.86
+    version: 1.1.86
   '@netlify/functions':
     specifier: ^2.4.1
     version: 2.4.1
@@ -35,6 +41,9 @@ dependencies:
   figlet:
     specifier: ^1.7.0
     version: 1.7.0
+  tailwind-scrollbar:
+    specifier: ^3.0.5
+    version: 3.0.5(tailwindcss@3.4.0)
   tailwindcss:
     specifier: ^3.4.0
     version: 3.4.0
@@ -1704,6 +1713,10 @@ packages:
       readable-stream: 4.5.1
     dev: true
 
+  /@fontsource/poiret-one@5.0.18:
+    resolution: {integrity: sha512-7LsyyuLv2UZ0qq6s0I+1eDlEr9f1STX2XQBpE5brEArhbX/eeCkjJtwsJViEveLaeUhIOeY1Mbjvc3y6j40Y3w==}
+    dev: false
+
   /@grpc/grpc-js@1.9.13:
     resolution: {integrity: sha512-OEZZu9v9AA+7/tghMDE8o5DAMD5THVnwSqDWuh7PPYO5287rTyqy0xEHT6/e4pbqSrhyLPdQFsam4TwFQVVIIw==}
     engines: {node: ^8.13.0 || >=10.10.0}
@@ -1771,6 +1784,12 @@ packages:
 
   /@iconify-json/heroicons@1.1.19:
     resolution: {integrity: sha512-uW2F9vdGll59W21ocBl+wR4Ve+/1CsmzBqPTuOaR3CbKzqnJKwzGASvC4Op0uTieFVWfBaevnzcRxwNo73J29g==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: false
+
+  /@iconify-json/simple-icons@1.1.86:
+    resolution: {integrity: sha512-rD5VlIgiOBPDcVQUCNbGu31WRYt+bj6bWFjH6+KEsxK/hDZTzylT5odF4Jo85PJUGZeJcGn18woE6P6I1Jiuxg==}
     dependencies:
       '@iconify/types': 2.0.0
     dev: false
@@ -12640,6 +12659,15 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /tailwind-scrollbar@3.0.5(tailwindcss@3.4.0):
+    resolution: {integrity: sha512-0ZwxTivevqq9BY9fRP9zDjHl7Tu+J5giBGbln+0O1R/7nHtBUKnjQcA1aTIhK7Oyjp6Uc/Dj6/dn8Dq58k5Uww==}
+    engines: {node: '>=12.13.0'}
+    peerDependencies:
+      tailwindcss: 3.x
+    dependencies:
+      tailwindcss: 3.4.0
+    dev: false
 
   /tailwindcss-debug-screens@2.2.1(tailwindcss@3.4.0):
     resolution: {integrity: sha512-EMyA0CYBzqcZJHtVDvBfmYzfx3NxuK4qDyVO5wnzcGOrmJsv25D9xPpWefVTORTvhE6pCh90Z1WYnLUKsg3yMw==}

@@ -24,6 +24,7 @@ const seoProps = Astro.props as SEOProps;
 	<body
 		class:list={[
 			{ "debug-screens": import.meta.env.NODE_ENV === "development" },
+			"scrollbar-custom",
 		]}
 	>
 		<Navbar />
