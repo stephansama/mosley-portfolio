@@ -1,0 +1,25 @@
+---
+const anchors = ["#events", "#music", "#contact"];
+import { Icon } from "astro-icon/components";
+---
+
+<div class="mx-auto flex max-w-7xl items-center justify-between p-4">
+	<a href="#">
+		<img
+			src="https://res.cloudinary.com/dkxqv3dll/image/upload/f_auto/madprologo_c6ge8d?_a=DATAdtXwZAA0"
+			alt="brand image"
+			class="size-8"
+		/>
+	</a>
+	<ul class="flex gap-4">
+		{
+			anchors.map((anchor) => (
+				<li>
+					<a href={anchor}>
+						<Icon name="mdi:arrow-right" />
+					</a>
+				</li>
+			))
+		}
+	</ul>
+</div>
