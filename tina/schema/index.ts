@@ -3,6 +3,20 @@ import type { Schema } from "tinacms";
 const schema: Schema = {
 	collections: [
 		{
+			name: "layout",
+			label: "Layout",
+			path: "content/layout",
+			format: "json",
+			ui: {
+				allowedActions: { create: false, delete: false },
+				global: true,
+			},
+			fields: [
+				{ type: "string", name: "title", label: "Title" },
+				{ type: "image", name: "profile", label: "Profile Photo" },
+			],
+		},
+		{
 			name: "post",
 			label: "Posts",
 			path: "content/posts",

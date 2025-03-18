@@ -17,6 +17,6 @@ export default defineConfig({
 	// Get this from tina.io
 	token: process.env.TINA_TOKEN,
 	build: { outputFolder: "admin", publicFolder },
-	media: { tina: { mediaRoot: "", publicFolder } },
+	media: { tina: { mediaRoot: "images", publicFolder } },
 	schema,
 });
