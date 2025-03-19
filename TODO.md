@@ -1,3 +1,5 @@
+# TODO
+
 - Darkmode only
 - events section
   youtube videos
@@ -11,3 +13,4 @@
   soundcloud albums
 - contact section
   socials & email
+- multipage support
