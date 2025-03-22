@@ -16,18 +16,22 @@
 	},
 	"devDependencies": {
 		"@astrojs/ts-plugin": "^1.10.4",
+		"@eslint/js": "^9.23.0",
 		"@iconify-json/mdi": "^1.2.3",
 		"@tinacms/cli": "^1.9.2",
 		"@tsconfig/recommended": "^1.0.8",
 		"@types/node": "^22.13.8",
 		"astro-icon": "^1.1.5",
 		"astro-seo": "^0.8.4",
+		"eslint": "^9.23.0",
+		"globals": "^16.0.0",
 		"prettier": "^3.4.2",
 		"prettier-plugin-astro": "^0.14.1",
 		"prettier-plugin-astro-organize-imports": "^0.4.11",
 		"prettier-plugin-organize-imports": "^4.1.0",
 		"prettier-plugin-tailwindcss": "^0.6.11",
-		"typescript": "^5.7.3"
+		"typescript": "^5.7.3",
+		"typescript-eslint": "^8.27.0"
 	},
 	"packageManager": "pnpm@9.15.2+sha512.93e57b0126f0df74ce6bff29680394c0ba54ec47246b9cf321f0121d8d9bb03f750a705f24edc3c1180853afd7c2c3b94196d0a3d53d3e069d9e2793ef11f321"
 }
