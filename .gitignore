@@ -26,3 +26,5 @@ public/admin
 tina/__generated__
 
 node_modules
+
+.node-modules-inspector
