@@ -1,0 +1,193 @@
+schema {
+  query: Query
+  mutation: Mutation
+}
+
+type Collection {
+  documents(after: String, before: String, filter: DocumentFilter, first: Float, folder: String, last: Float, sort: String): DocumentConnection!
+  fields: [JSON]
+  format: String
+  label: String
+  matches: String
+  name: String!
+  path: String!
+  slug: String!
+  templates: [JSON]
+}
+
+"""A relay-compliant pagination connection"""
+interface Connection {
+  pageInfo: PageInfo!
+  totalCount: Float!
+}
+
+interface Document {
+  _sys: SystemInfo
+  _values: JSON!
+  id: ID!
+}
+
+type DocumentConnection implements Connection {
+  edges: [DocumentConnectionEdges]
+  pageInfo: PageInfo!
+  totalCount: Float!
+}
+
+type DocumentConnectionEdges {
+  cursor: String!
+  node: DocumentNode
+}
+
+input DocumentFilter {
+  layout: LayoutFilter
+  post: PostFilter
+}
+
+input DocumentMutation {
+  layout: LayoutMutation
+  post: PostMutation
+}
+
+union DocumentNode = Folder | Layout | Post
+
+input DocumentUpdateMutation {
+  layout: LayoutMutation
+  post: PostMutation
+  relativePath: String
+}
+
+type Folder {
+  name: String!
+  path: String!
+}
+
+input ImageFilter {
+  eq: String
+  exists: Boolean
+  in: [String]
+  startsWith: String
+}
+
+scalar JSON
+
+type Layout implements Document & Node {
+  _sys: SystemInfo!
+  _values: JSON!
+  id: ID!
+  profile: String
+  title: String
+}
+
+type LayoutConnection implements Connection {
+  edges: [LayoutConnectionEdges]
+  pageInfo: PageInfo!
+  totalCount: Float!
+}
+
+type LayoutConnectionEdges {
+  cursor: String!
+  node: Layout
+}
+
+input LayoutFilter {
+  profile: ImageFilter
+  title: StringFilter
+}
+
+input LayoutMutation {
+  profile: String
+  title: String
+}
+
+type Mutation {
+  addPendingDocument(collection: String!, relativePath: String!, template: String): DocumentNode!
+  createDocument(collection: String, params: DocumentMutation!, relativePath: String!): DocumentNode!
+  createFolder(collection: String, relativePath: String!): DocumentNode!
+  createLayout(params: LayoutMutation!, relativePath: String!): Layout!
+  createPost(params: PostMutation!, relativePath: String!): Post!
+  deleteDocument(collection: String, relativePath: String!): DocumentNode!
+  updateDocument(collection: String, params: DocumentUpdateMutation!, relativePath: String!): DocumentNode!
+  updateLayout(params: LayoutMutation!, relativePath: String!): Layout!
+  updatePost(params: PostMutation!, relativePath: String!): Post!
+}
+
+interface Node {
+  id: ID!
+}
+
+type PageInfo {
+  endCursor: String!
+  hasNextPage: Boolean!
+  hasPreviousPage: Boolean!
+  startCursor: String!
+}
+
+type Post implements Document & Node {
+  _sys: SystemInfo!
+  _values: JSON!
+  body: JSON
+  id: ID!
+  title: String!
+}
+
+type PostConnection implements Connection {
+  edges: [PostConnectionEdges]
+  pageInfo: PageInfo!
+  totalCount: Float!
+}
+
+type PostConnectionEdges {
+  cursor: String!
+  node: Post
+}
+
+input PostFilter {
+  body: RichTextFilter
+  title: StringFilter
+}
+
+input PostMutation {
+  body: JSON
+  title: String
+}
+
+type Query {
+  collection(collection: String): Collection!
+  collections: [Collection!]!
+  document(collection: String, relativePath: String): DocumentNode!
+  getOptimizedQuery(queryString: String!): String
+  layout(relativePath: String): Layout!
+  layoutConnection(after: String, before: String, filter: LayoutFilter, first: Float, last: Float, sort: String): LayoutConnection!
+  node(id: String): Node!
+  post(relativePath: String): Post!
+  postConnection(after: String, before: String, filter: PostFilter, first: Float, last: Float, sort: String): PostConnection!
+}
+
+"""References another document, used as a foreign key"""
+scalar Reference
+
+input RichTextFilter {
+  eq: String
+  exists: Boolean
+  startsWith: String
+}
+
+input StringFilter {
+  eq: String
+  exists: Boolean
+  in: [String]
+  startsWith: String
+}
+
+type SystemInfo {
+  basename: String!
+  breadcrumbs(excludeExtension: Boolean): [String!]!
+  collection: Collection!
+  extension: String!
+  filename: String!
+  hasReferences: Boolean
+  path: String!
+  relativePath: String!
+  template: String!
+  title: String
+}
