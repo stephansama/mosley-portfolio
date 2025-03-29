@@ -5,7 +5,8 @@ import Layout from "../layouts/Layout.astro";
 
 const posts = await getCollection("posts");
 
-console.log(posts);
+// posts.map((p) => p.body);
+console.log(posts.map((p) => p.data.title));
 ---
 
 <Layout>
