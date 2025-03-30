@@ -3,10 +3,12 @@
 	"type": "module",
 	"version": "0.0.1",
 	"scripts": {
-		"dev": "tinacms dev -c \"astro dev --port 4545\"",
+		"astro": "astro",
 		"build": "tinacms build && astro build",
-		"preview": "astro preview",
-		"astro": "astro"
+		"dev": "tinacms dev -c \"astro dev --port 4545\"",
+		"generate-zod": "node ./tina/zod/generate.js",
+		"postgenerate-zod": "prettier ./tina/zod/schema.ts --write",
+		"preview": "astro preview"
 	},
 	"dependencies": {
 		"@tailwindcss/vite": "^4.0.4",
