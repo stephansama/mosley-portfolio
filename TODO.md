@@ -14,3 +14,4 @@
 - contact section
   socials & email
 - multipage support
+- meet with mosley monday
