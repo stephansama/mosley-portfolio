@@ -1,6 +1,6 @@
 # TODO
 
-- Darkmode only
+- Darkmode only (tentative)
 - events section
   youtube videos
   dropdates
