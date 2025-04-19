@@ -13,5 +13,6 @@
   soundcloud albums
 - contact section
   socials & email
+  albums
 - multipage support
 - meet with mosley tuesday
