@@ -1,5 +1,7 @@
 # TODO
 
+## remove after i finishe everything
+
 - Darkmode only (tentative)
 - events section
   youtube videos
