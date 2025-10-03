@@ -1,10 +1,8 @@
-# Welcome to React Router
+# DJ Portfolio
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/04b55465-6bc0-4f1b-a97b-1112ed63ac45/deploy-status)](https://app.netlify.com/projects/eclectic-faun-f904bb/deploys)
 
-A modern, production-ready template for building full-stack React applications using React Router.
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
+This is a portfolio website for DJ Mosley, built with React and TypeScript.
 
 ## Features
 
@@ -15,6 +13,20 @@ A modern, production-ready template for building full-stack React applications u
 - 🔒 TypeScript by default
 - 🎉 TailwindCSS for styling
 - 📖 [React Router docs](https://reactrouter.com/)
+
+## Components
+
+The portfolio is built with a variety of React components, including:
+
+- `About`: A component to display information about the DJ.
+- `Contact`: A component with a form to contact the DJ.
+- `Fallback`: A fallback component for when a route is not found.
+- `Footer`: The footer of the website.
+- `Hero`: The hero section of the website.
+- `Mixes`: A component to display the DJ's mixes.
+- `Music`: A component to display the DJ's music.
+- `Navigation`: The navigation bar of the website.
+- `Shows`: A component to display the DJ's upcoming shows.
 
 ## Getting Started
 
@@ -83,7 +95,3 @@ Make sure to deploy the output of `npm run build`
 ## Styling
 
 This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
-
----
-
-Built with ❤️ using React Router.
