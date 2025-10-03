@@ -1,4 +1,6 @@
-# Welcome to React Router!
+# Welcome to React Router
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/04b55465-6bc0-4f1b-a97b-1112ed63ac45/deploy-status)](https://app.netlify.com/projects/eclectic-faun-f904bb/deploys)
 
 A modern, production-ready template for building full-stack React applications using React Router.
 
