@@ -84,7 +84,7 @@ export function Navigation() {
 						}`}
 					>
 						<Music className="w-6 h-6 flex-shrink-0" />
-						{!isCollapsed && <span>DJ NEXUS</span>}
+						{!isCollapsed && <span>KVNCPT</span>}
 					</button>
 				</div>
 
@@ -140,7 +140,7 @@ export function Navigation() {
 						className="flex items-center gap-2 text-white tracking-wider hover:text-purple-400 transition-colors"
 					>
 						<Music className="w-5 h-5" />
-						<span>DJ NEXUS</span>
+						<span>KVNCPT</span>
 					</button>
 
 					<button

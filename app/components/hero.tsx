@@ -45,7 +45,7 @@ export function Hero() {
 					animate={{ opacity: 1 }}
 					transition={{ delay: 0.3 }}
 				>
-					DJ NEXUS
+					KVNCPT
 				</motion.h1>
 
 				<motion.p

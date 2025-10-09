@@ -2,7 +2,7 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/04b55465-6bc0-4f1b-a97b-1112ed63ac45/deploy-status)](https://app.netlify.com/projects/eclectic-faun-f904bb/deploys)
 
-This is a portfolio website for DJ Mosley, built with React and TypeScript.
+This is a portfolio website for KVNCPT, built with React and TypeScript.
 
 ## Features
 

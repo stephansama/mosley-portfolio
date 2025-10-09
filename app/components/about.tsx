@@ -16,7 +16,7 @@ export function About() {
 						<div className="space-y-4 text-white/70">
 							<p>
 								With over a decade of experience in electronic music production
-								and DJing, DJ Nexus has become a staple in the underground
+								and DJing, KVNCPT has become a staple in the underground
 								scene, known for seamlessly blending genres and creating
 								unforgettable experiences on the dance floor.
 							</p>
